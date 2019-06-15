@@ -37,7 +37,13 @@ namespace test_net_core_mvc
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddDbContext<DataBaseContext>(options => options.UseNpgsql(Configuration["ConnectionStrings:TestBD"]));
+            services.AddDbContextPool<DataBaseContext>( // replace "YourDbContext" with the class name of your DbContext
+                options => options.UseMySql("Server=localhost;Database=dotnet_first;User=dotnet;Password=dotnetrocks2019!;", // replace with your Connection String
+                    mySqlOptions =>
+                    {
+                        mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+                    }
+            ));
             services.AddScoped<DataBaseContext>();
         }
 
