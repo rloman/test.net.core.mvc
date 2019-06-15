@@ -9,7 +9,7 @@ using test_net_core_mvc.Models.DataBase;
 namespace test_net_core_mvc.Migrations
 {
     [DbContext(typeof(DataBaseContext))]
-    [Migration("20190615091233_InitialMigration")]
+    [Migration("20190615092110_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

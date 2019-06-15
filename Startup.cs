@@ -42,7 +42,9 @@ namespace test_net_core_mvc
                 options => options.UseMySql("Server=localhost;Database=dotnet_first;User=dotnet;Password=dotnetrocks2019!;", // replace with your Connection String
                     mySqlOptions =>
                     {
-                        mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql); // replace with your Server Version and Type
+                        mySqlOptions.ServerVersion(new Version(5, 7, 17), ServerType.MySql) // replace with your Server Version and Type
+                        //further MySQL option configurations go here
+                        .DisableBackslashEscaping();
                     }
             ));
             services.AddScoped<DataBaseContext>();
