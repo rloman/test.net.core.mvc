@@ -12,6 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 using Microsoft.EntityFrameworkCore;
 using test_net_core_mvc.Models.DataBase;
+using Pomelo.EntityFrameworkCore.MySql.Infrastructure;
 
 
 namespace test_net_core_mvc
